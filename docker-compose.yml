@@ -1,0 +1,20 @@
+logstash:
+  image: logstash
+  volumes:
+    - .:/app
+  command: logstash agent -f /app/logstash.config
+  links:
+    - elasticsearch
+  ports:
+    - 5044:5044
+elasticsearch:
+  image: elasticsearch
+  ports:
+    - 9200:9200
+    - 9300:9300
+kibana:
+  image: kibana
+  links:
+    - elasticsearch
+  ports:
+    - 5601:5601
