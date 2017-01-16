@@ -2,7 +2,7 @@ logstash:
   image: logstash
   volumes:
     - .:/app
-  command: logstash agent -f /app/logstash.config
+  command: logstash -f /app/logstash.config
   links:
     - elasticsearch
   ports:
