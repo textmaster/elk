@@ -7,7 +7,6 @@ logstash:
     - elasticsearch
   ports:
     - 5044:5044
-    - 12201:12201/udp
 elasticsearch:
   image: elasticsearch
   ports:
